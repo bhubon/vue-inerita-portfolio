@@ -57,7 +57,13 @@ defineProps({
                                         <img :src="project.image" class="w-12 h-12 rounded-full" v-if="project.image !='' ">
                                     </td>
                                     <td>
-                                        <a href="">Edit</a> <a href="">Delete</a> 
+                                        <Link :href="route('projects.edit',project.id)"
+                                        class="font-medium text-blue-500 hove:text-blue-700 mr-2 "
+                                         >Edit</Link>
+                                        <Link method="delete" :href="route('projects.destroy',project.id)"
+                                        as="button" type="button"
+                                        class="font-medium text-red-500 hove:text-red-700 mr-2 "
+                                         >Delete</Link>
                                     </td>
                                 </tr>
                             </tbody>
