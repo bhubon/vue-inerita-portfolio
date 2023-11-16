@@ -52,7 +52,7 @@ class ProjectController extends Controller
 
             return Redirect::route('projects.index')->with('success', '');
         }
-        return Redirect::back();
+        return Redirect::back()->with('message','Project successfully created');
     }
 
     /**
@@ -96,7 +96,7 @@ class ProjectController extends Controller
             'project_url' => $request->projectUrl,
         ]);
 
-        return Redirect::route('projects.index')->with('success','');
+        return Redirect::route('projects.index')->with('message','Project successfully updated');
     }
 
     /**
@@ -106,6 +106,6 @@ class ProjectController extends Controller
     {
         Storage::delete($project->image);
         $project->delete();
-        return Redirect::route('projects.index')->with('success','');
+        return Redirect::route('projects.index')->with('message','Project successfully deleted');
     }
 }

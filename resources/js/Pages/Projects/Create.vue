@@ -43,6 +43,7 @@ const submit = () => {
                         <select id="skill_id" name="skill_id" class="mt-1 block w-full pl-3 pr-10 text-base border-gray-300 focus:outline-none focus:ring-indigo-300 focus:border-indigo-300 rounded-md" v-model="form.skill_id">
                             <option v-for="skill in skills" :key="skill.id" :value="skill.id">{{ skill.name }}</option>
                         </select>
+                        <InputError class="mt-2" :message="form.errors.skill_id" />
                     </div>
                     <div>
                         <InputLabel for="name" value="Name" />
