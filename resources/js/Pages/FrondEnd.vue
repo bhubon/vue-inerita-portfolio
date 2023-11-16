@@ -4,6 +4,12 @@ import FrontendVue from '@/Layouts/Frontend.vue';
 import Hero from '@/Components/Frontend/Hero.vue';
 import Promote from '@/Components/Frontend/Promote.vue';
 import About from '@/Components/Frontend/About.vue';
+import Skills from '@/Components/Frontend/Skills.vue'
+
+const props = defineProps({
+    skills: Object
+});
+
 </script>
 
 <template>
@@ -15,6 +21,8 @@ import About from '@/Components/Frontend/About.vue';
         <Promote/>
         <!-- About -->
         <About/>
+        <!-- Skills -->
+        <Skills :skills="skills" />
     </FrontendVue>
 </template>
 
